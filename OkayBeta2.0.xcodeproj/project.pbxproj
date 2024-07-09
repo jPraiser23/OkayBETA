@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0438053C2C3D86F8002EA948 /* OkayBeta2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438053B2C3D86F8002EA948 /* OkayBeta2_0App.swift */; };
-		0438053E2C3D86F8002EA948 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438053D2C3D86F8002EA948 /* ContentView.swift */; };
+		0438053E2C3D86F8002EA948 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438053D2C3D86F8002EA948 /* LoginView.swift */; };
 		043805402C3D86FE002EA948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0438053F2C3D86FE002EA948 /* Assets.xcassets */; };
 		043805432C3D86FE002EA948 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043805422C3D86FE002EA948 /* Preview Assets.xcassets */; };
 		0438054D2C3D86FF002EA948 /* OkayBeta2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438054C2C3D86FF002EA948 /* OkayBeta2_0Tests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		043805382C3D86F8002EA948 /* OkayBeta2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OkayBeta2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0438053B2C3D86F8002EA948 /* OkayBeta2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkayBeta2_0App.swift; sourceTree = "<group>"; };
-		0438053D2C3D86F8002EA948 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0438053D2C3D86F8002EA948 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0438053F2C3D86FE002EA948 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		043805422C3D86FE002EA948 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		043805482C3D86FF002EA948 /* OkayBeta2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OkayBeta2.0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				0438053B2C3D86F8002EA948 /* OkayBeta2_0App.swift */,
-				0438053D2C3D86F8002EA948 /* ContentView.swift */,
+				0438053D2C3D86F8002EA948 /* LoginView.swift */,
 				0438053F2C3D86FE002EA948 /* Assets.xcassets */,
 				043805412C3D86FE002EA948 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0438053E2C3D86F8002EA948 /* ContentView.swift in Sources */,
+				0438053E2C3D86F8002EA948 /* LoginView.swift in Sources */,
 				0438053C2C3D86F8002EA948 /* OkayBeta2_0App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
