@@ -14,6 +14,9 @@
 		0438054D2C3D86FF002EA948 /* OkayBeta2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438054C2C3D86FF002EA948 /* OkayBeta2_0Tests.swift */; };
 		043805572C3D86FF002EA948 /* OkayBeta2_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043805562C3D86FF002EA948 /* OkayBeta2_0UITests.swift */; };
 		043805592C3D86FF002EA948 /* OkayBeta2_0UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043805582C3D86FF002EA948 /* OkayBeta2_0UITestsLaunchTests.swift */; };
+		04C0D3BA2C471ECA0042E623 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04C0D3B92C471ECA0042E623 /* FirebaseAuth */; };
+		04C0D3BC2C471ECA0042E623 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04C0D3BB2C471ECA0042E623 /* FirebaseStorage */; };
+		04C0D3BE2C4815370042E623 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04C0D3BD2C4815370042E623 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,7 @@
 		043805522C3D86FF002EA948 /* OkayBeta2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OkayBeta2.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		043805562C3D86FF002EA948 /* OkayBeta2_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkayBeta2_0UITests.swift; sourceTree = "<group>"; };
 		043805582C3D86FF002EA948 /* OkayBeta2_0UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkayBeta2_0UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04C0D3BD2C4815370042E623 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C0D3BA2C471ECA0042E623 /* FirebaseAuth in Frameworks */,
+				04C0D3BC2C471ECA0042E623 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +102,7 @@
 			children = (
 				0438053B2C3D86F8002EA948 /* OkayBeta2_0App.swift */,
 				0438053D2C3D86F8002EA948 /* LoginView.swift */,
+				04C0D3BD2C4815370042E623 /* GoogleService-Info.plist */,
 				0438053F2C3D86FE002EA948 /* Assets.xcassets */,
 				043805412C3D86FE002EA948 /* Preview Content */,
 			);
@@ -143,6 +150,10 @@
 			dependencies = (
 			);
 			name = OkayBeta2.0;
+			packageProductDependencies = (
+				04C0D3B92C471ECA0042E623 /* FirebaseAuth */,
+				04C0D3BB2C471ECA0042E623 /* FirebaseStorage */,
+			);
 			productName = OkayBeta2.0;
 			productReference = 043805382C3D86F8002EA948 /* OkayBeta2.0.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 0438052F2C3D86F8002EA948;
+			packageReferences = (
+				04C0D3B82C471ECA0042E623 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 043805392C3D86F8002EA948 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +247,7 @@
 			files = (
 				043805432C3D86FE002EA948 /* Preview Assets.xcassets in Resources */,
 				043805402C3D86FE002EA948 /* Assets.xcassets in Resources */,
+				04C0D3BE2C4815370042E623 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +603,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04C0D3B82C471ECA0042E623 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04C0D3B92C471ECA0042E623 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04C0D3B82C471ECA0042E623 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		04C0D3BB2C471ECA0042E623 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04C0D3B82C471ECA0042E623 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 043805302C3D86F8002EA948 /* Project object */;
 }
