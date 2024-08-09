@@ -6,17 +6,80 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+
+struct ChatUser{
+    let uid, email, profileImageUrl: String
+}
+class MainMessageViewModel: ObservableObject{
+    @Published var errorMessage = ""
+    @Published var chatUser: ChatUser?
+    init(){
+        fetchCurrentUser()
+    }
+    private func fetchCurrentUser(){
+        
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
+            self.errorMessage = "Could not find firebase uid"
+            return
+        }
+        
+        //Fetch Current User
+        FirebaseManager.shared.firestore.collection("users").document(uid).getDocument { snapshot,error in
+            if let error = error {
+                self.errorMessage = "Failed to fetch current user: \(error)"
+                print("Failed to fetch current user: " , error)
+                return
+            }
+            
+            guard let data = snapshot?.data() else {return}
+            
+           // self.errorMessage = "\(data.description)"
+            let uid = data["uid"] as? String ?? ""
+            let email = data["email"] as? String ?? ""
+            let profileImageUrl = data["profileImageUrl"] as? String ?? ""
+            
+            self.chatUser = ChatUser(uid: uid, email: email, profileImageUrl: profileImageUrl)
+            
+            
+        }
+    }
+}
 
 struct MainMessageView: View {
     @State var shouldShowLogOutOptions = false
-    
+    @ObservedObject private var vm = MainMessageViewModel()
+    var body: some View {
+        NavigationView{
+            VStack{
+//                Text("User: \(vm.chatUser?.uid ?? "") ")
+                //CUSTOM NAV BAR
+                customNavBar
+                messagesView
+
+            }
+            .overlay(
+                newMessageButton
+                ,alignment: .bottom)
+            .navigationBarHidden(true)
+        }
+    }
     private var customNavBar: some View {
         HStack{
-            Image(systemName: "person.fill")
-                .font(.system(size:34, weight: .heavy))
             
+            WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
+                .resizable()
+                .scaledToFill()
+                .frame(width:50, height:50)
+                .clipped()
+                .cornerRadius(50)
+                .overlay(RoundedRectangle(cornerRadius: 50)
+                    .stroke(Color(.label),lineWidth: 1))
+                .shadow(radius: 5)
+
+            //TODO: Change to username
             VStack(alignment:.leading, spacing: 4){
-                Text("USERNAME")
+                Text("\(vm.chatUser?.email ?? "")")
                     .font(.system(size: 24, weight: .bold))
                 HStack{
                     Circle()
@@ -51,20 +114,7 @@ struct MainMessageView: View {
         }
     }
     
-    var body: some View {
-        NavigationView{
-            VStack{
-                //CUSTOM NAV BAR
-                customNavBar
-                messagesView
 
-            }
-            .overlay(
-                newMessageButton
-                ,alignment: .bottom)
-            .navigationBarHidden(true)
-        }
-    }
     
     //Messages View
     private var messagesView: some View{
